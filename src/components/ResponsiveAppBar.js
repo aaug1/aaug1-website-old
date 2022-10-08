@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 
 
 
-const pages = ['About', 'Projects', 'CV'];
+const pages = ['About', 'Projects', 'CV', 'LinkedIn'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
@@ -44,7 +44,10 @@ const ResponsiveAppBar = () => {
   function changePage(path) {
     if (path === 'CV') {
       window.location.href = "https://drive.google.com/file/d/1R-FlL5qOxL3HNiIpjOYtjbYsro-lxOBg/view?usp=sharing";
-    } else{
+    } else if (path === 'LinkedIn') {
+      window.location.href = "https://www.linkedin.com/in/aidan-aug/";
+    }
+    else{
       navigate('/' + path.toLowerCase());
 
     }
@@ -141,7 +144,7 @@ const ResponsiveAppBar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip title="This is a photo of Aidan Aug">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Aidan Aug" src={require("../images/profile_aaug1.png")} />
               </IconButton>
