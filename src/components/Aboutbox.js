@@ -14,9 +14,9 @@ function Aboutbox(props) {
         <div className="col">
           {content}
         </div>
-        <div className="col aboutpicture">
+        {/* <div className="col">
           <img className="profile_pic" src={require("../images/LinkedIn1.png")} alt="slime"/>
-        </div>
+        </div> */}
           
       </div>
 

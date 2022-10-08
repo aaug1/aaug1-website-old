@@ -9,7 +9,6 @@ function About () {
   <div className="container-fluid flex-column justify-content-center">
 
     <Box title="About Me" content={aboutMe}/>
-    <Box title="My Interests"/>
     
   </div>
 
