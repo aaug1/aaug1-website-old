@@ -3,7 +3,6 @@ import '../App.css';
 import ResponsiveAppBar from '../components/ResponsiveAppBar';
 import Clock from '../components/Clock';
 import '../styles.css';
-import { Link } from "react-router-dom";
 
 
 function Home () {

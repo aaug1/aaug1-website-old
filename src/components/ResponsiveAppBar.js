@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import "../styles.css"
 import {useNavigate} from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 
 
@@ -55,11 +55,11 @@ const ResponsiveAppBar = () => {
     <AppBar position="absolute" className="" style={{ background: 'gray'}}>
       <Container maxWidth="xl" color="transparent">
         <Toolbar className="navbar" disableGutters>
+          <Link style={{color: 'white'}} to="/">
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -72,6 +72,7 @@ const ResponsiveAppBar = () => {
           >
             Aidan Aug's Website
           </Typography>
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
