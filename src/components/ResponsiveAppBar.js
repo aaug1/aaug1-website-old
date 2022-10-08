@@ -13,11 +13,16 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import "../styles.css"
+import {useNavigate} from 'react-router-dom';
+
+
+
 
 const pages = ['About', 'Projects', 'CV'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -36,10 +41,20 @@ const ResponsiveAppBar = () => {
     setAnchorElUser(null);
   };
 
+  function changePage(path) {
+    if (path === 'CV') {
+      window.location.href = "https://drive.google.com/file/d/1R-FlL5qOxL3HNiIpjOYtjbYsro-lxOBg/view?usp=sharing";
+    } else{
+      navigate('/' + path.toLowerCase());
+
+    }
+  
+  }
+
   return (
-    <AppBar position="static" >
-      <Container maxWidth="xl" color="primary">
-        <Toolbar class="navbar" disableGutters>
+    <AppBar position="absolute" className="" style={{ background: 'gray'}}>
+      <Container maxWidth="xl" color="transparent">
+        <Toolbar className="navbar" disableGutters>
           <Typography
             variant="h6"
             noWrap
@@ -117,7 +132,7 @@ const ResponsiveAppBar = () => {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={() => changePage(page)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}

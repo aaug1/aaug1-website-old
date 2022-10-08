@@ -3,41 +3,28 @@ import './App.css';
 import ResponsiveAppBar from './components/ResponsiveAppBar';
 import Clock from './components/Clock';
 import './styles.css';
+import { Route, Routes } from "react-router";
+import { Container, List } from "@material-ui/core";
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Projects from "./pages/Projects"
 
 function App() {
   return (
-
-    <div className="App">
-      <div class="container-full">
+    
+    <Container>
+      <ResponsiveAppBar/>
+        <div className="container" style={{height: 100}}>
         <video autoPlay muted loop id="bg-video">
           <source src={require("./images/abstract_line2.mp4")} type="video/mp4"/>
         </video>
       </div>
-      <ResponsiveAppBar/>
-
-      <div class="container-fluid homepage-content">
-        <div class="row justify-content-center">
-        <img src={require("./images/slime_animated.gif")} class="slime" alt="logo" />          
-        </div>
-        <div class="row justify-content-center">
-          <Clock/>
-        </div>
-  
-
-      </div>
-
-      <header className="App-header">
-        
-        <a
-          className="primary-link"
-          href="https://www.linkedin.com/in/aidan-aug/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Go to LinkedIn
-        </a>
-      </header>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/projects" element={<Projects/>}/>
+      </Routes>
+    </Container>
   );
 }
 
